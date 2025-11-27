@@ -14,7 +14,7 @@ export default function ManagePage() {
   useEffect(() => {
     async function load() {
       try {
-        const res = await fetch("process.env.NEXT_PUBLIC_API_URL/products");
+        const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/products`);
         const data = await res.json();
         setProducts(data);
         setLoading(false);
@@ -40,7 +40,7 @@ export default function ManagePage() {
 
     try {
       const res = await fetch(
-        `process.env.NEXT_PUBLIC_API_URL/products/${id}`,
+        `${process.env.NEXT_PUBLIC_API_URL}/products/${id}`,
         {
           method: "DELETE",
         }
@@ -66,25 +66,6 @@ export default function ManagePage() {
       Swal.fire("Server Error", "Something went wrong.", "error");
     }
   };
-
-  // const handleDelete = async (id) => {
-  //   // if (!confirm("Delete this product?")) return;
-  //   try {
-  //     const res = await fetch(`process.env.NEXT_PUBLIC_API_URL/products/${id}`, {
-  //       method: "DELETE",
-  //     });
-  //     const data = await res.json();
-  //     if (!data.success) {
-  //       toast.error(data.message || "Delete failed");
-  //       return;
-  //     }
-  //     toast.success("Deleted");
-  //     setProducts((p) => p.filter((it) => it._id !== id));
-  //   } catch (err) {
-  //     console.error(err);
-  //     toast.error("Server error");
-  //   }
-  // };
 
   if (loading) return <Spinner />;
 

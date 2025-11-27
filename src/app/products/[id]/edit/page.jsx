@@ -17,7 +17,7 @@ export default function EditProductPage() {
     async function load() {
       try {
         const res = await fetch(
-          `process.env.NEXT_PUBLIC_API_URL/products/${params.id}`
+          `${process.env.NEXT_PUBLIC_API_URL}/products/${params.id}`
         );
         const data = await res.json();
         setProduct(data);
@@ -45,7 +45,7 @@ export default function EditProductPage() {
 
     try {
       const res = await fetch(
-        `process.env.NEXT_PUBLIC_API_URL/products/${params.id}`,
+        `${process.env.NEXT_PUBLIC_API_URL}/products/${params.id}`,
         {
           method: "PATCH",
           headers: { "Content-Type": "application/json" },
@@ -71,7 +71,7 @@ export default function EditProductPage() {
     return <p className="text-center mt-10 text-red-500">Product not found.</p>;
 
   return (
-    <div className="max-w-2xl mx-auto p-6 mt-8 bg-base-100 shadow-xl border border-teal-100 rounded-lg">
+    <div className="max-w-2xl mx-auto p-6 mt-8 bg-base-100 shadow-xl border border-teal-300 rounded-lg">
       <h2 className="text-3xl font-bold mb-4 text-center text-teal-600">
         Edit Product
       </h2>
@@ -106,7 +106,7 @@ export default function EditProductPage() {
             <img
               src={product.image}
               alt="Preview"
-              className="w-32 h-24 object-cover rounded border border-teal-100"
+              className="h-34 object-cover rounded border border-teal-100"
             />
           </div>
         </div>

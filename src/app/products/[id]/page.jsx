@@ -4,7 +4,7 @@ import Link from "next/link";
 export default async function ProductDetails({ params }) {
   const { id } = await params;
 
-  const res = await fetch(`process.env.NEXT_PUBLIC_API_URL/products/${id}`);
+  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/products/${id}`);
 
   if (!res.ok) {
     return (
@@ -18,7 +18,7 @@ export default async function ProductDetails({ params }) {
   const product = await res.json();
 
   return (
-    <div className=" px-6 md:px-16 lg:px-24 mt-6 mx-auto">
+    <div className=" px-6 md:px-16 lg:px-24 mt-10 mx-auto min-h-screen">
       <h2 className="text-2xl font-bold my-6 text-teal-600">Product Details</h2>
       <div className="flex flex-col md:flex-row md:justify-center md:items-center gap-6">
         <div className="w-full md:w-1/2">

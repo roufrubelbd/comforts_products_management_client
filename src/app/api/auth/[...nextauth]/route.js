@@ -22,7 +22,7 @@ export const authOptions = {
         const { email, password } = credentials;
 
         // -------------- Calling Express backend ------------
-        const res = await fetch("process.env.NEXT_PUBLIC_API_URL/login", {
+        const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/login`, {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ email, password }),
@@ -60,20 +60,3 @@ export const authOptions = {
 
 const handler = NextAuth(authOptions);
 export { handler as GET, handler as POST };
-
-// import NextAuth from "next-auth"
-// import GoogleProvider from "next-auth/providers/google"
-
-// export const authOptions = {
-//   providers: [
-//     GoogleProvider({
-//       clientId: process.env.GOOGLE_CLIENT_ID,
-//       clientSecret: process.env.GOOGLE_CLIENT_SECRET
-//     })
-//   ],
-//   secret: process.env.NEXTAUTH_SECRET,
-// }
-
-// const handler = NextAuth(authOptions)
-
-// export { handler as GET, handler as POST }
