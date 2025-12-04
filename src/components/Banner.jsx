@@ -20,12 +20,11 @@ const Banner = () => {
         pagination={{ clickable: true }}
         autoplay={{ delay: 3000 }}
         loop={true}
-        className="w-full h-[300px] md:h-[400px] lg:h-[500px]"
+        className="w-full h-full"
       >
         {/* SLIDE 1 */}
         <SwiperSlide>
           <div className="w-full h-full bg-[#f1f0ee] flex items-center justify-between gap-2 md:gap-10 px-6 md:px-16">
-
             {/* LEFT TEXT */}
             <div className="text-black space-y-4">
               <p className="text-sm tracking-widest">ELESSI STORE</p>
@@ -33,15 +32,16 @@ const Banner = () => {
                 Autumn <br /> & Winter 2023
               </h1>
 
-              <Link href="/products" className="text-xs md:text-base px-1 md:px-6 py-2 bg-teal-600 text-white rounded-md hover:bg-teal-700">SHOP NOW</Link>
+              <Link
+                href="/products"
+                className="text-xs md:text-base px-1 md:px-6 py-2 bg-teal-600 text-white rounded-md hover:bg-teal-700"
+              >
+                SHOP NOW
+              </Link>
             </div>
 
             {/* RIGHT IMAGE */}
-           <Image
-              src={img01}
-              alt="Banner 1"
-              className="object-contain"
-             />
+            <Image src={img01} alt="Banner 1" className="object-contain" />
           </div>
         </SwiperSlide>
 
@@ -54,16 +54,15 @@ const Banner = () => {
                 Stylish Parts <br /> Bags
               </h1>
 
-              <Link href="/products" className="px-2 md:px-6 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700">
+              <Link
+                href="/products"
+                className="px-2 md:px-6 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700"
+              >
                 EXPLORE
               </Link>
             </div>
 
-            <Image
-              src={img02}
-              alt="Banner 2"
-              className="object-contain"
-             />
+            <Image src={img02} alt="Banner 2" className="object-contain" />
           </div>
         </SwiperSlide>
 
@@ -76,19 +75,17 @@ const Banner = () => {
                 Trending Fashion <br /> 2023
               </h1>
 
-              <Link href="/products" className="text-xs md:text-base px-1 md:px-6 py-2 bg-pink-600 text-white rounded-md hover:bg-pink-700">
+              <Link
+                href="/products"
+                className="text-xs md:text-base px-1 md:px-6 py-2 bg-pink-600 text-white rounded-md hover:bg-pink-700"
+              >
                 BUY NOW
               </Link>
             </div>
 
-            <Image
-              src={img03}
-              alt="Banner 3"
-              className="object-contain"
-             />
+            <Image src={img03} alt="Banner 3" className="object-contain" />
           </div>
         </SwiperSlide>
-
       </Swiper>
     </div>
   );
