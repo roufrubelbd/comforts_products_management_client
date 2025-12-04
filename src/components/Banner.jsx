@@ -13,7 +13,7 @@ import Link from "next/link";
 
 const Banner = () => {
   return (
-    <div className="w-full mt-10 px-6 md:px-16 lg:px-24">
+    <div className="w-full md:h-[60vh] mt-10 px-6 md:px-16 lg:px-24">
       <Swiper
         modules={[Navigation, Pagination, Autoplay]}
         navigation
