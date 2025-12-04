@@ -56,7 +56,7 @@ export default function EditProductPage() {
       const data = await res.json();
 
       if (data.success) {
-        toast.success("Product updated successfully!");
+        toast.success(data.message || "Product updated!");
         router.push("/manage");
       } else {
         toast.error(data.message || "Update failed");
